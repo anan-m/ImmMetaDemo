@@ -1,0 +1,64 @@
+Demo Site with Basic UI and Navigation
+
+Uses Python's Flask framework. Read more here : http://flask.pocoo.org/
+
+Getting the web server to run locally on your computer
+
+Set up local code environment with Virtualenv
+
+Put the ImmMetaDemo code in a directory
+With Terminal, navigate to the code directory
+
+Python can help organize your code modules, keeping them separate from existing Python modules with Virtualenv (virtual environment).
+
+easy_install virtualenv
+
+Install PIP
+
+easy_install pip
+
+Virtualenv will organize all your modules and even download new requested packages and updates. When activated, Virtualenv will supply the modules needed for an application.
+
+Create a virtual environment
+
+Inside your code directory, run the command
+
+virtualenv venv
+
+We are telling Virtualenv to create a new directory called venv to manage our packages.
+
+Turn on the Virtualenv
+
+Once created we need to turn on the virtual environment, telling the computer to use the venv as a source for all packages.
+
+. venv/bin/activate
+The '.' is an execution command, saying "Hey, run the 'activate' program inside /venv/bin directory".
+
+Install Requirements with PIP
+
+There is a file requirements.txt that lists all the packages we need to run the web server. Earlier we imported Flask manually but now we will import Flask via PIP's alternative method.
+
+requirements.txt
+
+Flask==0.10
+Currently there is only one package requested, Flask version 0.9.
+
+To install the required packages run the command,
+
+pip install -r requirements.txt
+PIP installs all requested requirements and it also downloads all of their dependencies (werkzeug and jinja2).
+
+Run web server locally
+
+With all the requirements installed let's turn on the server,
+
+python app.py
+Stop the server with CTRL+C inside the Terminal window.
+
+Alternatively, we can use a new command to turn on the server. The Heroku Toolbelt installed Foreman, a helper utility for running applications. Run the command,
+
+foreman start
+Foreman is the command we will be using for the rest of the semester. Foreman uses the file Procfile to know what to turn on. There is a single line inside Procfile,
+
+web: python app.py
+The Procfile will be pushed to Heroku, it tells Heroku where are main web server script is located, app.py. It also declares we're using Python.
