@@ -2,11 +2,12 @@ Demo Site with Basic UI and Navigation
 
 Uses Python's Flask framework. Read more here : http://flask.pocoo.org/
 
-Getting the web server to run locally on your computer
+Getting the web server to run locally on your computer. note: Later we will be using heroku cloud platform. Read more here : https://heroku.com
 
 Set up local code environment with Virtualenv
 
 Put the ImmMetaDemo code in a directory
+
 With Terminal, navigate to the code directory
 
 Python can help organize your code modules, keeping them separate from existing Python modules with Virtualenv (virtual environment).
@@ -55,10 +56,14 @@ With all the requirements installed let's turn on the server,
 python app.py
 Stop the server with CTRL+C inside the Terminal window.
 
-Alternatively, we can use a new command to turn on the server. The Heroku Toolbelt installed Foreman, a helper utility for running applications. Run the command,
+Alternatively, we can use a new command to turn on the server. The Heroku Toolbelt (https://toolbelt.heroku.com) will install Foreman, a helper utility for running applications. Run the command,
 
 foreman start
-Foreman is the command we will be using for the rest of the semester. Foreman uses the file Procfile to know what to turn on. There is a single line inside Procfile,
+Foreman uses the file Procfile to know what to turn on. There is a single line inside Procfile,
 
 web: python app.py
-The Procfile will be pushed to Heroku, it tells Heroku where are main web server script is located, app.py. It also declares we're using Python.
+The Procfile will be pushed to Heroku, it tells Heroku(at a later stage) where are main web server script is located, app.py. It also declares we're using Python.
+
+TUTORIAL :
+
+http://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-i-hello-world
